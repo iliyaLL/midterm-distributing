@@ -9,7 +9,6 @@ This project implements a **Task Management System** using an **MQTT Broker** to
 - **Java**: Core programming language for both server and worker nodes.
 - **Spring Boot 3.1.3**: For building RESTful APIs and running the central server.
 - **Eclipse Paho MQTT Client 1.2.5**: For MQTT communication between the central server and nodes.
-- **OSHI (Operating System & Hardware Information) 6.4.1**: For capturing system metrics like CPU load.
 - **Mosquitto MQTT Broker**: Message broker for MQTT communication.
 - **Maven**: Build tool and dependency manager.
 
@@ -94,14 +93,6 @@ The results, including **sorted array, CPU load, start time, end time, and proce
 
 ---
 
-## 📦 Next Steps and Improvements
-- ✅ **Add Database Integration:** Store task results in a SQL database.
-- ✅ **Implement Load Balancing:** Distribute tasks among multiple nodes.
-- ✅ **Performance Testing:** Test system load under high data volume.
-- ✅ **Docker Integration:** Run all components using Docker Compose.
-
----
-
 ## 📧 Support
-For any issues, feel free to open an issue on the repository or contact the development team.
+For any issues, feel free to open an issue on the repository.
 
