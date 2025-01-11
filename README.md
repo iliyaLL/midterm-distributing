@@ -11,6 +11,7 @@ This project implements a **Task Management System** using an **MQTT Broker** to
 - **Eclipse Paho MQTT Client 1.2.5**: For MQTT communication between the central server and nodes.
 - **Mosquitto MQTT Broker**: Message broker for MQTT communication.
 - **Maven**: Build tool and dependency manager.
+- **OSHI**: For capturing system metrics like CPU load and model.
 
 ---
 
