@@ -45,7 +45,6 @@ Ensure the Mosquitto MQTT broker is running on port **1883**.
   sudo apt update
   sudo apt install mosquitto
   sudo systemctl start mosquitto
-  mosquitto -v
   ```
 
 ### **Step 2: Build and Run the Central Server**
@@ -71,6 +70,9 @@ You can send tasks using **cURL** (two nodes ):
 curl -X POST http://localhost:8080/tasks/send/node1 \
 -H "Content-Type: application/json" \
 -d '[5,3,8,1,4,7]'
+
+1e5 elements from 1e5 to 1
+curl -X POST http://localhost:8080/tasks/send/node1 -H "Content-Type: application/json" -d @array.json
 ```
 
 ### **Step 5: Verify Results in the Central Server Log**

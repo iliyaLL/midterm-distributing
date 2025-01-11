@@ -8,17 +8,17 @@ import java.util.Arrays;
 @RequestMapping("/tasks")
 public class MqttPublisher {
     private static final String BROKER_URL = "tcp://localhost:1883";
-    private static final String TOPIC = "task/processing";
 
-    @PostMapping("/send")
-    public String sendTask(@RequestBody int[] array) {
+    @PostMapping("/send/{nodeId}")
+    public String sendTask(@PathVariable String nodeId, @RequestBody int[] array) {
+        String topic = "task/" + nodeId;
         try {
             MqttClient client = new MqttClient(BROKER_URL, MqttClient.generateClientId());
             client.connect();
             String message = Arrays.toString(array);
-            client.publish(TOPIC, new MqttMessage(message.getBytes()));
+            client.publish(topic, new MqttMessage(message.getBytes()));
             client.disconnect();
-            return "Task Sent: " + message;
+            return "Task sent to " + nodeId + ". Array:" + message;
         } catch (MqttException e) {
             e.printStackTrace();
             return "Error sending task!";
