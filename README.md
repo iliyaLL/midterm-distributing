@@ -39,6 +39,15 @@ mqtt-task-manager/
 
 ## 🚀 How to Run the Program
 
+### Config Mosquitto to listen for any connections on LAN
+```bash
+sudo nano /etc/mosquitto/mosquitto.conf 
+
+add these settings
+listener 1883
+allow_anonymous true
+```
+
 ### **Step 1: Start the MQTT Broker (Mosquitto)**
 Ensure the Mosquitto MQTT broker is running on port **1883**.
 - Direct Installation (Linux Debian based):
